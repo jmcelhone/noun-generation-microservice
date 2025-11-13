@@ -15,3 +15,6 @@ To RECIEVE data:
 `nouns = socket.recv()`
 <br>
 You will recieve a string with your requested quantity of nouns, each with a space between them.
+
+
+An example client is included to show how to connect and call the microservice.
