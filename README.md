@@ -18,3 +18,5 @@ You will recieve a string with your requested quantity of nouns, each with a spa
 
 
 An example client is included to show how to connect and call the microservice.
+
+![](UML.png)
