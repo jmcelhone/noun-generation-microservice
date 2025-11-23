@@ -37,7 +37,7 @@ while True:
     message = socket.recv()
     if len(message) > 0:
         split_message = message.decode().split()
-        quantity = s[0]
+        quantity = split_message[0]
         if len(split_message) > 1:
             category = split_message[1]
         else:
