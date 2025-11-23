@@ -36,10 +36,10 @@ def get_nouns(quantity, category = "random"):
 while True:
     message = socket.recv()
     if len(message) > 0:
-        s = message.decode().split()
+        split_message = message.decode().split()
         quantity = s[0]
-        if len(s) > 1:
-            category = s[1]
+        if len(split_message) > 1:
+            category = split_message[1]
         else:
             category = "random"
         nouns = get_nouns(quantity, category)
