@@ -5,12 +5,14 @@ context = zmq.Context()
 socket = context.socket(zmq.REP)
 socket.bind("tcp://*:5555")
 
+#Save nouns to lists
 with open("list.txt", 'r') as f: random_lines = f.readlines()
 with open("animals.txt", 'r') as f: animal_lines = f.readlines()
 with open("feelings.txt", 'r') as f: feeling_lines = f.readlines()
 with open("food.txt", 'r') as f: food_lines = f.readlines()
 with open("vehicles.txt", 'r') as f: vehicle_lines = f.readlines()
 
+#retrieve nouns based on category
 def get_noun(category):
     category = category.lower()
     if category == "animal":
@@ -25,6 +27,7 @@ def get_noun(category):
         lines = random_lines
     return random.choice(lines).strip().lower()
 
+#Get a random number of nouns
 def get_nouns(quantity, category = "random"):
     noun_string = ""
     for i in range(int(quantity)):
@@ -33,6 +36,7 @@ def get_nouns(quantity, category = "random"):
             noun_string += " "
     return noun_string
     
+#Send/recieve message from/to user
 while True:
     message = socket.recv()
     if len(message) > 0:
