@@ -16,6 +16,33 @@ To RECIEVE data:
 <br>
 You will recieve a string with your requested quantity of nouns, each with a space between them.
 
+Example request
+
+`socket.send_string("3 animal")`
+
+Example request with no category (random nouns)
+
+`socket.send_string("5")`
+
+Example receiving code
+
+`nouns = socket.recv().decode("utf-8")`
+
+`print(nouns)`
+
+Example response
+
+`"tiger lion zebra"`
+
+**How To Run**
+
+Start the microservice:
+
+`python noun_generator.py`
+
+Run the test client:
+
+`python test_client.py`
 
 An example client is included to show how to connect and call the microservice.
 
